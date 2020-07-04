@@ -6,21 +6,20 @@ from flask_cors import CORS
 
 
 def create_app(test_config=None):
-  # create and configure the app
-  app = Flask(__name__)
-  CORS(app)
 
-  return app
+    app = Flask(__name__)
+    #setup_db(app)
+    CORS(app)
 
-APP = create_app()
-
-@APP.route('/')
-def index():
-    return jsonify({
-            'message': 'Hello'
-        })
+    @app.route('/')
+    def get_greeting():
+        greeting = "Hello"
+        return greeting
 
 
+    return app
+
+app = create_app()
 
 if __name__ == '__main__':
-    APP.run()
+    app.run()
