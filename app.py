@@ -17,7 +17,21 @@ def create_app(test_config=None):
             'message': 'Hello'
         })
 
+	@app.route('/actors')
+	@requires_auth('get:actors')
+	def retrieve_actors(jwt):
 
+		actors = Actor.query.all()
+		formated_actors = [actor.format() for actor in actors]
+
+		if len(actors) == 0:
+			abort(404)
+
+		return jsonify({
+			'success': True,
+			'actors': formated_actors
+		})
+		
     return app
 
 app = create_app()
