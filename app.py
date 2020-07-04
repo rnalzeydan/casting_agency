@@ -31,7 +31,7 @@ def create_app(test_config=None):
 			'success': True,
 			'actors': formated_actors
 		})
-		
+
 	@app.route('/movies')
 	@requires_auth('get:movies')
 	def retrieve_movies(jwt):
@@ -45,8 +45,8 @@ def create_app(test_config=None):
 		return jsonify({
 			'success': True,
 			'movies': formated_movies
-		})
-		
+		          })
+
     return app
 
 app = create_app()
