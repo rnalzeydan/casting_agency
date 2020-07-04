@@ -3,12 +3,11 @@ from flask import Flask, request, abort, jsonify, render_template, redirect, url
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
-from auth import AuthError, requires_auth
 
 def create_app(test_config=None):
 
     app = Flask(__name__)
-    #setup_db(app)
+    # setup_db(app)
     CORS(app)
 
     @app.route('/')
@@ -17,37 +16,22 @@ def create_app(test_config=None):
             'message': 'Hello'
         })
 
-	@app.route('/actors')
-	@requires_auth('get:actors')
-	def retrieve_actors(jwt):
+    @app.route('/actors')
+    def retrieve_actors():
 
-		actors = Actor.query.all()
-		formated_actors = [actor.format() for actor in actors]
+        actors = Actor.query.all()
+        formated_actors = [actor.format() for actor in actors]
 
-		if len(actors) == 0:
-			abort(404)
+        if len(actors) == 0:
+            abort(404)
 
-		return jsonify({
-			'success': True,
-			'actors': formated_actors
-		})
-
-	@app.route('/movies')
-	@requires_auth('get:movies')
-	def retrieve_movies(jwt):
-
-		movies = Movie.query.all()
-		formated_movies = [movie.format() for movie in movies]
-
-		if len(movies) == 0:
-			abort(404)
-
-		return jsonify({
-			'success': True,
-			'movies': formated_movies
-		          })
+        return jsonify({
+            'success': True,
+            'actors': formated_actors
+        })
 
     return app
+
 
 app = create_app()
 
