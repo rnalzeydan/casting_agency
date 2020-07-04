@@ -3,6 +3,7 @@ from flask import Flask, request, abort, jsonify, render_template, redirect, url
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
+from auth import AuthError, requires_auth
 
 def create_app(test_config=None):
 
@@ -17,7 +18,8 @@ def create_app(test_config=None):
         })
 
     @app.route('/actors')
-    def retrieve_actors():
+    @requires_auth('get:actors')
+    def retrieve_actors(jwt):
 
         actors = Actor.query.all()
         formated_actors = [actor.format() for actor in actors]
