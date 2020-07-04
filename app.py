@@ -3,12 +3,13 @@ from flask import Flask, request, abort, jsonify, render_template, redirect, url
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
+from models import setup_db, Movie, Actor
 from auth import AuthError, requires_auth
 
 def create_app(test_config=None):
 
     app = Flask(__name__)
-    # setup_db(app)
+    setup_db(app)
     CORS(app)
 
     @app.route('/')
