@@ -138,6 +138,71 @@ def create_app(test_config=None):
         except Exception:
             abort(422)
 
+    '''
+    PATCH Method
+    '''
+
+    @app.route('/actors/<int:id>', methods=['PATCH'])
+    @requires_auth('patch:actors')
+    def update_actor(jwt, id):
+
+        body = request.get_json()
+        actor = Actor.query.filter(Actor.id == id).one_or_none()
+
+        if actor is None:
+            abort(404)
+
+        new_name = body.get('name', None)
+        new_age = body.get('age', None)
+        new_gender = body.get('gender', None)
+
+        try:
+            if new_name is not None:
+                actor.name = new_name
+            if new_age is not None:
+                actor.age = new_age
+            if new_gender is not None:
+                actor.gender = new_gender
+
+            actor.update()
+
+            return jsonify({
+                'success': True,
+                'actor': actor.format()
+            })
+
+        except Exception:
+            abort(422)
+
+    @app.route('/movies/<int:id>', methods=['PATCH'])
+    @requires_auth('patch:movies')
+    def update_movie(jwt, id):
+
+        body = request.get_json()
+        movie = Movie.query.filter(Movie.id == id).one_or_none()
+
+        if movie is None:
+            abort(404)
+
+        new_title = body.get('title', None)
+        new_release_date = body.get('release_date', None)
+
+        try:
+            if new_title is not None:
+                movie.title = new_title
+            if new_release_date is not None:
+                movie.release_date = new_release_date
+
+            movie.update()
+
+            return jsonify({
+                'success': True,
+                'movie': movie.format()
+            })
+
+        except Exception:
+            abort(422)
+
     return app
 
 
