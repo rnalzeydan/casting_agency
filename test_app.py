@@ -119,7 +119,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(movie, None)
 
     def test_modify_actor(self):
-        res = self.client().patch('/actors/12', json=self.edit_actor,
+        res = self.client().patch('/actors/1', json=self.edit_actor,
                                   headers={"Authorization": director_token})
         data = json.loads(res.data)
 
@@ -128,7 +128,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertTrue(data['actor'])
 
     def test_modify_movie(self):
-        res = self.client().patch('/movies/12', json=self.edit_movie,
+        res = self.client().patch('/movies/1', json=self.edit_movie,
                                   headers={"Authorization": director_token})
         data = json.loads(res.data)
 
