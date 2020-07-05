@@ -41,6 +41,7 @@ GET '/actors'
 - Request argument: None
 - Request body: None
 - Response:
+```
   {
     "actors": [
         {
@@ -64,12 +65,14 @@ GET '/actors'
     ],
     "success": true
   }
+```
 
 GET '/movies'
 - Fetches movies information from the server
 - Request argument: None
 - Request body: None
 - Response:
+```
   {
       "movies": [
           {
@@ -90,12 +93,14 @@ GET '/movies'
       ],
       "success": true
   }
+```
 
 DELETE '/actors/{actor_id}'
 - Deletes the actor of the given ID if it exists.
 - Request argument: actor_id:int
 - Request body: None
 - Response:
+```
   {
       "actor": {
           "age": "13",
@@ -105,12 +110,14 @@ DELETE '/actors/{actor_id}'
       },
       "success": true
   }
+```
 
 DELETE '/movies/{movie_id}'
 - Deletes the movie of the given ID if it exists.
 - Request argument: movie_id:int
 - Request body: None
 - Response:
+```
   {
       "movie": {
           "id": 6,
@@ -119,12 +126,14 @@ DELETE '/movies/{movie_id}'
       },
       "success": true
   }
+```
 
 POST '/actors'
 - Creates a new actor into the server.
 - Request argument: None
 - Request body: {name:string, age=string , gender:string}
 - Response:
+```
   {
       "actor": {
           "age": "24",
@@ -134,12 +143,14 @@ POST '/actors'
       },
       "success": true
   }
+```
 
 POST '/movies'
 - Creates a new actor into the server.
 - Request argument: None
 - Request body: {title:string, release_date:string}
 - Response:
+```
   {
       "movie": {
           "id": 6,
@@ -148,12 +159,14 @@ POST '/movies'
       },
       "success": true
   }
+```
 
 PATCH '/actors/{actor_id}'
 - Edits the actor of the given ID if it exists.
 - Request argument: actor_id:int
 - Request body: {name:string, age=string , gender:string}
 - Response:
+```
   {
       "actor": {
           "age": "13",
@@ -163,12 +176,14 @@ PATCH '/actors/{actor_id}'
       },
       "success": true
   }
+```
 
 PATCH '/movies/{movie_id}'
 - Edits the movie of the given ID if it exists.
 - Request argument: movie_id:int
 - Request body:{title:string, release_date:string}
 - Response:
+```
   {
       "movie": {
           "id": 6,
@@ -177,6 +192,7 @@ PATCH '/movies/{movie_id}'
       },
       "success": true
   }
+```
 
 ## Error Handling
 * Error example:
@@ -267,11 +283,9 @@ The `--reload` flag will detect file changes and restart the server automaticall
 ## Testing
 
 To run the tests, run
-
+```bash
 dropdb casting_agency_test
-
 createdb casting_agency_test
-
 psql casting_agency_test < Casting_Agency.psql
-
 python test_app.py
+```
