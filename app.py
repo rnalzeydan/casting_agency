@@ -1,10 +1,11 @@
 import os
-from flask import Flask, request, abort, jsonify, render_template, redirect, url_for
+from flask import Flask, request, abort, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
 from models import setup_db, Movie, Actor
 from auth import AuthError, requires_auth
+
 
 def create_app(test_config=None):
 
@@ -254,7 +255,6 @@ def create_app(test_config=None):
             "error": error.status_code,
             "message": error.error['description']
         }), error.status_code
-
 
     return app
 

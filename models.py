@@ -5,12 +5,15 @@ from flask_sqlalchemy import SQLAlchemy
 import json
 
 database_name = 'casting_agency'
-database_path = 'postgres://gqlwnowteoyzar:58ee094aabe52e0b60b58a56cbf98c15fae905d6fa7d2d2494c147a601aacf87@ec2-35-172-73-125.compute-1.amazonaws.com:5432/d4nbj31pa7jr3b'
+database_path = 'postgres://gqlwnowteoyzar:' \
+    '58ee094aabe52e0b60b58a56cbf98c15fae905d6fa7d2d2494c147a601aacf87' \
+    '@ec2-35-172-73-125.compute-1.amazonaws.com:5432/d4nbj31pa7jr3b'
 
 '''!! NOTE THIS LINE MUST BE UNCOMMENTED IF YOU RUN LOCALLY'''
-#database_path = "postgresql://{}/{}".format('localhost:5432', database_name)
+# database_path = "postgresql://{}/{}".format('localhost:5432', database_name)
 
 db = SQLAlchemy()
+
 
 def setup_db(app, database_path=database_path):
     app.config["SQLALCHEMY_DATABASE_URI"] = database_path
@@ -47,6 +50,7 @@ class Movie(db.Model):
             'title': self.title,
             'release_date': self.release_date
         }
+
 
 class Actor(db.Model):
     __tablename__ = 'actors'
