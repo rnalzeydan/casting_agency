@@ -78,12 +78,11 @@ PATCH '/movies/{movie_id}'
 
 ## Error Handling
 * Error example:
-  {
-      "success": False,
 
-      "error": 404,
-
-      "message": "not found"
+  { 
+   "success": False,
+   "error": 404,
+   "message": "not found"
   }
 
 The errors that may occur:
