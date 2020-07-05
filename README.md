@@ -80,12 +80,14 @@ PATCH '/movies/{movie_id}'
 * Error example:
   {
       "success": False,
+
       "error": 404,
+
       "message": "not found"
   }
 
 The errors that may occur:
-  * 400 – bad Request
+
   * 400: Bad Request
   * 400: Permissions were not included in the JWT.
   * 400: Unable to parse authentication token.
@@ -162,7 +164,11 @@ The `--reload` flag will detect file changes and restart the server automaticall
 ## Testing
 
 To run the tests, run
+
 dropdb casting_agency_test
+
 createdb casting_agency_test
+
 psql casting_agency_test < Casting_Agency.psql
+
 python test_app.py
