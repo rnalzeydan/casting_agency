@@ -4,7 +4,11 @@ from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 import json
 
+database_name = 'casting_agency'
 database_path = 'postgres://gqlwnowteoyzar:58ee094aabe52e0b60b58a56cbf98c15fae905d6fa7d2d2494c147a601aacf87@ec2-35-172-73-125.compute-1.amazonaws.com:5432/d4nbj31pa7jr3b'
+
+'''!! NOTE THIS LINE MUST BE UNCOMMENTED IF YOU RUN LOCALLY'''
+#database_path = "postgresql://{}/{}".format('localhost:5432', database_name)
 
 db = SQLAlchemy()
 

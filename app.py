@@ -15,7 +15,7 @@ def create_app(test_config=None):
     @app.route('/')
     def get_greeting():
         return jsonify({
-            'message': 'Hello'
+            'message': 'Welcome on Casting Agency Project'
         })
 
     @app.route('/actors')
