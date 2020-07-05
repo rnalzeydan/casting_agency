@@ -40,50 +40,154 @@ GET '/actors'
 - Fetches actors information from the server
 - Request argument: None
 - Request body: None
+- Response:
+  {
+    "actors": [
+        {
+            "age": "45",
+            "gender": "Male",
+            "id": 1,
+            "name": "Leonardo DiCaprio"
+        },
+        {
+            "age": "56",
+            "gender": "Male",
+            "id": 2,
+            "name": "Brad Pitt"
+        },
+        {
+            "age": "45",
+            "gender": "Female",
+            "id": 3,
+            "name": "Angelina Jolie"
+        }
+    ],
+    "success": true
+  }
 
 GET '/movies'
 - Fetches movies information from the server
 - Request argument: None
 - Request body: None
+- Response:
+  {
+      "movies": [
+          {
+              "id": 1,
+              "release_date": "2000",
+              "title": "The mask"
+          },
+          {
+              "id": 2,
+              "release_date": "2010",
+              "title": "Monster House"
+          },
+          {
+              "id": 3,
+              "release_date": "2019",
+              "title": "Despicable Me"
+          }
+      ],
+      "success": true
+  }
 
 DELETE '/actors/{actor_id}'
 - Deletes the actor of the given ID if it exists.
 - Request argument: actor_id:int
 - Request body: None
+- Response:
+  {
+      "actor": {
+          "age": "13",
+          "gender": "Male",
+          "id": 6,
+          "name": "Waled"
+      },
+      "success": true
+  }
 
 DELETE '/movies/{movie_id}'
 - Deletes the movie of the given ID if it exists.
 - Request argument: movie_id:int
 - Request body: None
+- Response:
+  {
+      "movie": {
+          "id": 6,
+          "release_date": "2013",
+          "title": "Name of Love"
+      },
+      "success": true
+  }
 
 POST '/actors'
 - Creates a new actor into the server.
 - Request argument: None
 - Request body: {name:string, age=string , gender:string}
+- Response:
+  {
+      "actor": {
+          "age": "24",
+          "gender": "Male",
+          "id": 6,
+          "name": "Waled"
+      },
+      "success": true
+  }
 
 POST '/movies'
 - Creates a new actor into the server.
 - Request argument: None
 - Request body: {title:string, release_date:string}
+- Response:
+  {
+      "movie": {
+          "id": 6,
+          "release_date": "2019",
+          "title": "Frozen"
+      },
+      "success": true
+  }
 
 PATCH '/actors/{actor_id}'
 - Edits the actor of the given ID if it exists.
 - Request argument: actor_id:int
 - Request body: {name:string, age=string , gender:string}
+- Response:
+  {
+      "actor": {
+          "age": "13",
+          "gender": "Male",
+          "id": 6,
+          "name": "Waled"
+      },
+      "success": true
+  }
 
 PATCH '/movies/{movie_id}'
 - Edits the movie of the given ID if it exists.
 - Request argument: movie_id:int
 - Request body:{title:string, release_date:string}
+- Response:
+  {
+      "movie": {
+          "id": 6,
+          "release_date": "2013",
+          "title": "Frozen"
+      },
+      "success": true
+  }
 
 ## Error Handling
 * Error example:
 
-  { 
+```
+  {
    "success": False,
    "error": 404,
    "message": "not found"
   }
+```
 
 The errors that may occur:
 
