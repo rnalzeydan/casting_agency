@@ -1,9 +1,8 @@
 # Casting Agency Project
 
-	As conclusion of the Full Stack ND program, this project was built outlining skills acquired throughout the journey regarding Python, 
-relational databases, RESTful APIs, manage user authentication and access control using Auth0 and deploy database-backed web APIs.
+As conclusion of the Full Stack ND program, this project was built outlining skills acquired throughout the journey regarding Python, relational databases, RESTful APIs, manage user authentication and access control using Auth0 and deploy database-backed web APIs.
 
-	The Casting Agency models a company that is responsible for creating movies, managing and assigning actors to those movies.
+The Casting Agency models a company that is responsible for creating movies, managing and assigning actors to those movies.
 
 ## Casting Agency Project is Hosted on Heroku
 
