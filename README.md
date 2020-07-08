@@ -10,7 +10,8 @@ The Casting Agency models a company that is responsible for creating movies, man
 https://app-casting-agency.herokuapp.com/
 ```
 
-you can try the endpoints using Postman or Curl, tokens for each role are provided in setup.sh file to let you make an authorized request.
+you can try the endpoints using Postman or Curl.
+Tokens for each role are provided in setup.sh file to let you make an authorized request.
 
 ## Authorization
 The API uses the Auth0 Role Based Access Control mechanisms for implementing authorization for each endpoint. The following permissions are currently accepted;
