@@ -46,33 +46,33 @@ GET '/actors'
 - Response:
 ```
 {
-"actors": [
-	{
-		"age": "45",
-		"gender": "Male",
-		"id": 1,
-		"name": "Leonardo DiCaprio"
-	},
-	{
-		"age": "56",
-		"gender": "Male",
-		"id": 2,
-		"name": "Brad Pitt"
-	},
-	{
-		"age": "45",
-		"gender": "Female",
-		"id": 3,
-		"name": "Angelina Jolie"
-	},
-	{
-		"age": "44",
-		"gender": "Male",
-		"id": 8,
-		"name": "Ryan Reynlods"
-	}
-],
-"success": true
+	"actors": [
+		{
+			"age": "45",
+			"gender": "Male",
+			"id": 1,
+			"name": "Leonardo DiCaprio"
+		},
+		{
+			"age": "56",
+			"gender": "Male",
+			"id": 2,
+			"name": "Brad Pitt"
+		},
+		{
+			"age": "45",
+			"gender": "Female",
+			"id": 3,
+			"name": "Angelina Jolie"
+		},
+		{
+			"age": "44",
+			"gender": "Male",
+			"id": 8,
+			"name": "Ryan Reynlods"
+		}
+	],
+	"success": true
 }
 ```
 
@@ -145,7 +145,7 @@ DELETE '/movies/{movie_id}'
 POST '/actors'
 - Creates a new actor into the server.
 - Request argument: None
-- Request body: {name:string, age=string , gender:string}
+- Request body: {name:string, age:string , gender:string}
 - Response:
 ```
 {
@@ -178,7 +178,7 @@ POST '/movies'
 PATCH '/actors/{actor_id}'
 - Edits the actor of the given ID if it exists.
 - Request argument: actor_id:int
-- Request body: {name:string, age=string , gender:string}
+- Request body: {name:string, age:string , gender:string}
 - Response:
 ```
 {
