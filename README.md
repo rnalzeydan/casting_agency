@@ -46,33 +46,33 @@ GET '/actors'
 - Response:
 ```
 {
-	"actors": [
-		{
-			"age": "45",
-			"gender": "Male",
-			"id": 1,
-			"name": "Leonardo DiCaprio"
-		},
-		{
-			"age": "56",
-			"gender": "Male",
-			"id": 2,
-			"name": "Brad Pitt"
-		},
-		{
-			"age": "45",
-			"gender": "Female",
-			"id": 3,
-			"name": "Angelina Jolie"
-		},
-		{
-			"age": "44",
-			"gender": "Male",
-			"id": 8,
-			"name": "Ryan Reynlods"
-		}
-	],
-	"success": true
+"actors": [
+	{
+		"age": "45",
+		"gender": "Male",
+		"id": 1,
+		"name": "Leonardo DiCaprio"
+	},
+	{
+		"age": "56",
+		"gender": "Male",
+		"id": 2,
+		"name": "Brad Pitt"
+	},
+	{
+		"age": "45",
+		"gender": "Female",
+		"id": 3,
+		"name": "Angelina Jolie"
+	},
+	{
+		"age": "44",
+		"gender": "Male",
+		"id": 8,
+		"name": "Ryan Reynlods"
+	}
+],
+"success": true
 }
 ```
 
