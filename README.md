@@ -45,29 +45,35 @@ GET '/actors'
 - Request body: None
 - Response:
 ```
-  {
-    "actors": [
-        {
-            "age": "45",
-            "gender": "Male",
-            "id": 1,
-            "name": "Leonardo DiCaprio"
-        },
-        {
-            "age": "56",
-            "gender": "Male",
-            "id": 2,
-            "name": "Brad Pitt"
-        },
-        {
-            "age": "45",
-            "gender": "Female",
-            "id": 3,
-            "name": "Angelina Jolie"
-        }
-    ],
-    "success": true
-  }
+	{
+		"actors": [
+			{
+				"age": "45",
+				"gender": "Male",
+				"id": 1,
+				"name": "Leonardo DiCaprio"
+			},
+			{
+				"age": "56",
+				"gender": "Male",
+				"id": 2,
+				"name": "Brad Pitt"
+			},
+			{
+				"age": "45",
+				"gender": "Female",
+				"id": 3,
+				"name": "Angelina Jolie"
+			},
+			{
+				"age": "44",
+				"gender": "Male",
+				"id": 8,
+				"name": "Ryan Reynlods"
+			}
+		],
+		"success": true
+	}
 ```
 
 GET '/movies'
@@ -76,26 +82,31 @@ GET '/movies'
 - Request body: None
 - Response:
 ```
-  {
-      "movies": [
-          {
-              "id": 1,
-              "release_date": "2000",
-              "title": "The mask"
-          },
-          {
-              "id": 2,
-              "release_date": "2010",
-              "title": "Monster House"
-          },
-          {
-              "id": 3,
-              "release_date": "2019",
-              "title": "Despicable Me"
-          }
-      ],
-      "success": true
-  }
+	{
+		"movies": [
+			{
+				"id": 1,
+				"release_date": "2000",
+				"title": "The mask"
+			},
+			{
+				"id": 2,
+				"release_date": "2010",
+				"title": "Monster House"
+			},
+			{
+				"id": 3,
+				"release_date": "2019",
+				"title": "Despicable Me"
+			},
+			{
+				"id": 8,
+				"release_date": "1999",
+				"title": "Mulan"
+			}
+		],
+		"success": true
+	}
 ```
 
 DELETE '/actors/{actor_id}'
@@ -104,15 +115,15 @@ DELETE '/actors/{actor_id}'
 - Request body: None
 - Response:
 ```
-  {
-      "actor": {
-          "age": "13",
-          "gender": "Male",
-          "id": 6,
-          "name": "Waled"
-      },
-      "success": true
-  }
+	{
+		"actor": {
+			"age": "44",
+			"gender": "Male",
+			"id": 8,
+			"name": "Ryan Reynlods"
+		},
+		"success": true
+	}
 ```
 
 DELETE '/movies/{movie_id}'
@@ -121,14 +132,14 @@ DELETE '/movies/{movie_id}'
 - Request body: None
 - Response:
 ```
-  {
-      "movie": {
-          "id": 6,
-          "release_date": "2013",
-          "title": "Name of Love"
-      },
-      "success": true
-  }
+	{
+		"movie": {
+			"id": 8,
+			"release_date": "1998",
+			"title": "Mulan"
+		},
+		"success": true
+	}
 ```
 
 POST '/actors'
@@ -137,15 +148,15 @@ POST '/actors'
 - Request body: {name:string, age=string , gender:string}
 - Response:
 ```
-  {
-      "actor": {
-          "age": "24",
-          "gender": "Male",
-          "id": 6,
-          "name": "Waled"
-      },
-      "success": true
-  }
+	{
+		"actor": {
+			"age": "43",
+			"gender": "Male",
+			"id": 8,
+			"name": "Ryan Reynlods"
+		},
+		"success": true
+	}
 ```
 
 POST '/movies'
@@ -154,14 +165,14 @@ POST '/movies'
 - Request body: {title:string, release_date:string}
 - Response:
 ```
-  {
-      "movie": {
-          "id": 6,
-          "release_date": "2019",
-          "title": "Frozen"
-      },
-      "success": true
-  }
+	{
+		"movie": {
+			"id": 8,
+			"release_date": "1999",
+			"title": "Mulan"
+		},
+		"success": true
+	}
 ```
 
 PATCH '/actors/{actor_id}'
@@ -170,15 +181,15 @@ PATCH '/actors/{actor_id}'
 - Request body: {name:string, age=string , gender:string}
 - Response:
 ```
-  {
-      "actor": {
-          "age": "13",
-          "gender": "Male",
-          "id": 6,
-          "name": "Waled"
-      },
-      "success": true
-  }
+	{
+		"actor": {
+			"age": "44",
+			"gender": "Male",
+			"id": 8,
+			"name": "Ryan Reynlods"
+		},
+		"success": true
+	}
 ```
 
 PATCH '/movies/{movie_id}'
@@ -187,14 +198,14 @@ PATCH '/movies/{movie_id}'
 - Request body:{title:string, release_date:string}
 - Response:
 ```
-  {
-      "movie": {
-          "id": 6,
-          "release_date": "2013",
-          "title": "Frozen"
-      },
-      "success": true
-  }
+	{
+		"movie": {
+			"id": 8,
+			"release_date": "1998",
+			"title": "Mulan"
+		},
+		"success": true
+	}
 ```
 
 ## Error Handling
